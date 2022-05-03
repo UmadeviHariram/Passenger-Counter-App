@@ -1,9 +1,17 @@
 let currentCount = 0;
-document.getElementById("countPeople").innerText = currentCount;
+let countEl = document.getElementById("countPeople");
+countEl.innerText = currentCount;
 let count = () => {
-    currentCount = parseInt(document.getElementById("countPeople").innerText) + 1;
-    document.getElementById("countPeople").innerText = currentCount;
+    currentCount = parseInt(countEl.innerText) + 1;
+    countEl.innerText = currentCount;
 }
 let reset = () => {
-    document.getElementById("countPeople").innerText = 0;
+    currentCount = 0;
+    countEl.innerText = currentCount;
+
+}
+
+let save = () => {
+    document.getElementById("save-el").textContent += parseInt(countEl.innerText) + " - ";
+    reset();
 }
